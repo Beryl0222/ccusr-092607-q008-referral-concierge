@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "县域转诊陪护闭环簿领域事件",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "aggregate_type",
+    "aggregate_id",
+    "occurred_at",
+    "version",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "REFERRAL_RECEIVED",
+        "ARRIVAL_CONFIRMED",
+        "URGENCY_ESCALATED",
+        "RESOURCE_BOOKED",
+        "FOLLOWUP_COMPLETED"
+      ]
+    },
+    "aggregate_type": {
+      "type": "string",
+      "enum": [
+        "referral_order",
+        "arrival_assessment",
+        "care_coordination",
+        "return_plan"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "payload_required_by_event": {
+    "ARRIVAL_CONFIRMED": [
+      "observed_at",
+      "assessor_ref"
+    ],
+    "URGENCY_ESCALATED": [
+      "reason",
+      "review_due_at"
+    ],
+    "FOLLOWUP_COMPLETED": [
+      "outcome",
+      "next_action"
+    ]
+  },
+  "additionalProperties": false
+}

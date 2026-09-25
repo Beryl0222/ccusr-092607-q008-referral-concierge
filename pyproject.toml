@@ -1,0 +1,5 @@
+[project]
+name = "referral-concierge"
+version = "0.1.0"
+description = "县域转诊陪护闭环簿领域契约"
+requires-python = ">=3.11"
