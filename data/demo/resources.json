@@ -1,0 +1,30 @@
+{
+  "resources": [
+    {
+      "resource_id": "ct",
+      "name": "县医院CT室",
+      "kind": "exam",
+      "slots": [
+        {"slot_id": "ct-25-1100", "start_at": "2026-09-25T11:00:00+08:00", "end_at": "2026-09-25T12:00:00+08:00", "capacity": 1},
+        {"slot_id": "ct-25-1300", "start_at": "2026-09-25T13:00:00+08:00", "end_at": "2026-09-25T14:00:00+08:00", "capacity": 1}
+      ]
+    },
+    {
+      "resource_id": "green-bed",
+      "name": "急诊绿色抢救床位",
+      "kind": "bed",
+      "green_channel": true,
+      "slots": [
+        {"slot_id": "green-day", "start_at": "2026-09-25T08:00:00+08:00", "end_at": "2026-09-25T20:00:00+08:00", "capacity": 1}
+      ]
+    },
+    {
+      "resource_id": "escort",
+      "name": "转诊陪护专班",
+      "kind": "staff",
+      "slots": [
+        {"slot_id": "escort-day", "start_at": "2026-09-25T08:00:00+08:00", "end_at": "2026-09-25T20:00:00+08:00", "capacity": 2}
+      ]
+    }
+  ]
+}

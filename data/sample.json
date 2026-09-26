@@ -1,9 +1,26 @@
 {
-  "event_id": "092601-008-sample-001",
+  "event_id": "evt-ZZ-2026-0001-0001",
   "event_type": "REFERRAL_RECEIVED",
   "aggregate_type": "referral_order",
-  "aggregate_id": "referral_concierge-001",
+  "aggregate_id": "ZZ-2026-0001",
   "occurred_at": "2026-09-25T10:00:00+08:00",
   "version": 1,
-  "payload": {}
+  "payload": {
+    "actor_role": "primary_doctor",
+    "actor_ref": "dr-li-zhanggu",
+    "business_key": "rk-ZZ-2026-0001",
+    "referral_no": "ZZ-2026-0001",
+    "patient": {
+      "patient_ref": "pat-930511",
+      "name": "王桂兰",
+      "id_ref": "5107261930511"
+    },
+    "referring_facility": "张谷镇中心卫生院",
+    "primary_doctor_ref": "dr-li-zhanggu",
+    "chief_complaint": "电话中描述：持续胸痛两小时，伴出汗",
+    "contact": {
+      "name": "王桂兰家属",
+      "phone": "0839-5550101"
+    }
+  }
 }

@@ -1,0 +1,5 @@
+{
+  "freeze_horizon_minutes": 120,
+  "pickup_grace_minutes": 30,
+  "green_channel_max_hold_minutes": 240
+}

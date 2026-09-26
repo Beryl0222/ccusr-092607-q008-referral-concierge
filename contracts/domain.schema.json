@@ -20,10 +20,21 @@
       "type": "string",
       "enum": [
         "REFERRAL_RECEIVED",
+        "PREARRIVAL_CONTACTED",
+        "ARRIVAL_PLANNED",
         "ARRIVAL_CONFIRMED",
+        "OBSERVATION_RECORDED",
         "URGENCY_ESCALATED",
+        "ESCALATION_JUSTIFIED",
         "RESOURCE_BOOKED",
-        "FOLLOWUP_COMPLETED"
+        "RESOURCE_RELEASED",
+        "ESCORT_ASSIGNED",
+        "DISPOSITION_DECIDED",
+        "DOWNWARD_PLANNED",
+        "DOWNWARD_HANDOVER_CONFIRMED",
+        "REVIEW_CHECKLIST_ISSUED",
+        "FOLLOWUP_COMPLETED",
+        "DEADLINE_BREACHED"
       ]
     },
     "aggregate_type": {
@@ -52,17 +63,74 @@
     }
   },
   "payload_required_by_event": {
+    "REFERRAL_RECEIVED": [
+      "referral_no",
+      "patient",
+      "referring_facility",
+      "primary_doctor_ref",
+      "chief_complaint",
+      "contact"
+    ],
+    "PREARRIVAL_CONTACTED": [
+      "contacted_at",
+      "channel"
+    ],
+    "ARRIVAL_PLANNED": [
+      "planned_arrival_at",
+      "pickup_point",
+      "greeter_ref"
+    ],
     "ARRIVAL_CONFIRMED": [
       "observed_at",
       "assessor_ref"
+    ],
+    "OBSERVATION_RECORDED": [
+      "observed_at",
+      "assessor_ref",
+      "acuity"
     ],
     "URGENCY_ESCALATED": [
       "reason",
       "review_due_at"
     ],
+    "ESCALATION_JUSTIFIED": [
+      "justification"
+    ],
+    "RESOURCE_BOOKED": [
+      "bookings",
+      "purpose"
+    ],
+    "RESOURCE_RELEASED": [
+      "releases",
+      "reason"
+    ],
+    "ESCORT_ASSIGNED": [
+      "escort_ref",
+      "responsible_contact"
+    ],
+    "DISPOSITION_DECIDED": [
+      "decision",
+      "department"
+    ],
+    "DOWNWARD_PLANNED": [
+      "target_facility",
+      "handover_deadline"
+    ],
+    "DOWNWARD_HANDOVER_CONFIRMED": [
+      "confirmed_at",
+      "receiving_facility"
+    ],
+    "REVIEW_CHECKLIST_ISSUED": [
+      "items",
+      "followup_due_at"
+    ],
     "FOLLOWUP_COMPLETED": [
       "outcome",
       "next_action"
+    ],
+    "DEADLINE_BREACHED": [
+      "kind",
+      "due_at"
     ]
   },
   "additionalProperties": false
